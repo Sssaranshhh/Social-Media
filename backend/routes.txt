@@ -1,0 +1,38 @@
+| Route                      | Method | Purpose                                 |
+| -------------------------- | ------ | --------------------------------------- |
+| `/api/users/:id`           | `GET`  | Get user profile (name, pic, bio, etc.) |
+| `/api/users/:id/update`    | `PUT`  | Update user profile                     |
+| `/api/users/:id/follow`    | `POST` | Follow a user                           |
+| `/api/users/:id/unfollow`  | `POST` | Unfollow a user                         |
+| `/api/users/:id/followers` | `GET`  | Get followers of a user                 |
+| `/api/users/:id/following` | `GET`  | Get following list of a user            |
+| `/api/users/search?q=...`  | `GET`  | Search users by name/username           |
+
+
+| Route                     | Method   | Purpose                                       |
+| ------------------------- | -------- | --------------------------------------------- |
+| `/api/posts/`             | `POST`   | Create new post    ✔️                           |
+| `/api/posts/`             | `GET`    | Get all posts of user(when profile open)  ✔️                   |
+| `/api/posts/:id`          | `GET`    | Get single post by ID                         |
+| `/api/posts/:id`          | `DELETE` | Delete a post                                 |
+| `/api/posts/user/:userId` | `GET`    | Get posts by specific user                    |
+| `/api/posts/following`    | `GET`    | Get feed from followed users ✔️(fanout or pull) |
+
+
+| Route                   | Method | Purpose                            |
+| ----------------------- | ------ | ---------------------------------- |
+| `/api/posts/:id/like`   | `POST` | Like a post                        |
+| `/api/posts/:id/unlike` | `POST` | Unlike a post                      |
+| `/api/posts/:id/likes`  | `GET`  | Get list of users who liked a post |
+
+| Route                            | Method   | Purpose                     |
+| -------------------------------- | -------- | --------------------------- |
+| `/api/posts/:id/comments`        | `POST`   | Add a comment to a post     |
+| `/api/posts/:id/comments`        | `GET`    | Get all comments for a post |
+| `/api/comments/:commentId/reply` | `POST`   | Reply to a comment          |
+| `/api/comments/:commentId`       | `DELETE` | Delete a comment (or reply) |
+
+
+| Route               | Method | Purpose                                                |
+| ------------------- | ------ | ------------------------------------------------------ |
+| `/api/feed/:userId` | `GET`  | Get cached/personalized feed for a user (fanout model) |
